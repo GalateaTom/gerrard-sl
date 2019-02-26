@@ -1,0 +1,82 @@
+Configutation:
+  name: Default
+  Properties:
+    Property:
+      name: log-path
+      value: "logs"
+
+
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+    File:
+      - name: Warn_Appender
+        fileName: ${log-path}/warn.log
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        ThresholdFilter:
+            level: WARN
+            onMatch: ACCEPT
+            onMismatch: DENY
+
+      - name: Info_Appender
+        fileName: ${log-path}/info.log
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        ThresholdFilter:
+            level: INFO
+            onMatch: ACCEPT
+            onMismatch: DENY
+
+      - name: Debug_Appender
+        fileName: ${log-path}/debug.log
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        ThresholdFilter:
+          level: DEBUG
+          onMatch: ACCEPT
+          onMismatch: DENY
+
+      - name: Error_Appender
+        fileName: ${log-path}/error.log
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        ThresholdFilter:
+          level: ERROR
+          onMatch: ACCEPT
+          onMismatch: DENY
+
+  # Logging should be done asynchronously
+    # http://logging.apache.org/log4j/2.x/manual/appenders.html#AsyncAppender:
+    Async:
+      - name: AsyncAppender
+        bufferSize: 50000
+        AppenderRef:
+          - ref: Console_Appender
+          - ref: Debug_Appender
+          - ref: Info_Appender
+          - ref: Warn_Appender
+          - ref: Error_Appender
+
+  Loggers:
+      Root:
+        level: debug
+        AppenderRef:
+          - ref: AsyncAppender
+
+      Logger:
+        - name: DebugLogger
+          level: debug
+          AppenderRef:
+            - ref: Debug_Appender
+              level: debug
+
+        - name: InforLogger
+          level: debug
+          AppenderRef:
+            - ref: Info_Appender
+              level: debug

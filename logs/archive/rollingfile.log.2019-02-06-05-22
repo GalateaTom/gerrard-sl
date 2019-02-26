@@ -1,0 +1,10 @@
+[INFO ] 2019-02-06 17:10:36.851 [main] main - Reading file: input.test1.1.csv
+[INFO ] 2019-02-06 17:10:36.851 [main] main - Reading file: input.test1.2.csv
+[INFO ] 2019-02-06 17:10:36.851 [main] main - Reading file: input.test1.3.csv
+[INFO ] 2019-02-06 17:19:01.736 [main] main - Reading file: input.test1.1.csv
+[INFO ] 2019-02-06 17:19:01.742 [main] main - Reading file: input.test1.2.csv
+[INFO ] 2019-02-06 17:19:01.743 [main] main - Reading file: input.test1.3.csv
+[INFO ] 2019-02-06 17:21:19.725 [main] main - Reading file: C:\Order Matching Problem Inputs\InterviewMatchingEngineProblem\Phase1input.test1.1.csv
+[INFO ] 2019-02-06 17:21:19.733 [main] main - Reading file: C:\Order Matching Problem Inputs\InterviewMatchingEngineProblem\Phase1input.test1.2.csv
+[INFO ] 2019-02-06 17:21:19.735 [main] main - Reading file: C:\Order Matching Problem Inputs\InterviewMatchingEngineProblem\Phase1input.test1.3.csv
+[INFO ] 2019-02-06 17:22:50.052 [main] main - Reading file: C:/Order Matching Problem Inputs/InterviewMatchingEngineProblem/Phase1input.test1.1.csv
